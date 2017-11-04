@@ -85,7 +85,10 @@ static const FARString& GetFarTitleAddons()
 	ReplaceStrings(strTitleAddons,L"%Admin",Opt.IsUserAdmin?MSG(MFarTitleAddonsAdmin):L"",-1,true);
 	RemoveTrailingSpaces(strTitleAddons);
 
-	return strTitleAddons;
+  static FARString strOverride(L" Far");
+  return strOverride;
+
+	// return strTitleAddons;
 }
 
 bool ConsoleTitle::TitleModified = false;
