@@ -2177,7 +2177,7 @@ COPY_CODES ShellCopy::CopySymLink(const wchar_t *Root, const wchar_t *ExistingNa
 	}
 
 	FARString strExistingName;
-	ConvertNameToFull(ExistingName, strExistingName);
+	ConvertNameToFull(strRealName.CPtr(), strExistingName);
 	
 	std::wstring relative_name;
 	for (size_t i = 0;; ++i) {
