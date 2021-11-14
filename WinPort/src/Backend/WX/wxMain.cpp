@@ -542,12 +542,26 @@ wxEvtHandler *WinPort_EventHandler()
 
 bool WinPortApp::OnInit()
 {
+#ifdef __APPLE__
+    wxDisplay display(nullptr);
+    wxRect screen = display.GetClientArea();
+#endif
+
+#ifdef __APPLE__
+    g_winport_frame = new WinPortFrame("WinPortApp", wxPoint(screen.GetLeft(), screen.GetTop()),
+                                       wxSize(screen.GetWidth(), screen.GetHeight()));
+#else
 	g_winport_frame = new WinPortFrame("WinPortApp", wxDefaultPosition, wxDefaultSize );
 //    WinPortFrame *frame = new WinPortFrame( "WinPortApp", wxPoint(50, 50), wxSize(800, 600) );
+#endif
 	g_winport_frame->Show( true );
 	if (g_broadway)
 		g_winport_frame->Maximize();
-		
+
+#ifdef __APPLE__
+    g_winport_frame->Maximize();
+#endif
+
 	return true;
 }
 
