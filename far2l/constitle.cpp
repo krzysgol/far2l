@@ -100,7 +100,10 @@ static const FARString& GetFarTitleAddons()
 
 	RemoveTrailingSpaces(strTitleAddons);
 
-	return strTitleAddons;
+  static FARString strOverride(L" Far");
+  return strOverride;
+
+	// return strTitleAddons;
 }
 
 bool ConsoleTitle::TitleModified = false;
