@@ -151,9 +151,15 @@ static int ProtocolSMB_GetInformationInternal(FileInformation &file_info, const 
 	if (rc < 0)
 		return rc;
 
+#if defined(__APPLE__)
+	file_info.access_time = s.st_atimespec;
+	file_info.modification_time = s.st_mtimespec;
+	file_info.status_change_time = s.st_ctimespec;
+#else
 	file_info.access_time = s.st_atim;
 	file_info.modification_time = s.st_mtim;
 	file_info.status_change_time = s.st_ctim;
+#endif
 	file_info.mode = s.st_mode;
 	file_info.size = s.st_size;
 	return 0;
