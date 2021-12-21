@@ -388,7 +388,7 @@ endif()
 if (DEFINED PYTHON AND PYTHON)
 	find_package(PythonLibs 3.0)
 
-	if(PYTHONLIBS_FOUND)
+	if(PYTHONLIBS_FOUND OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 		find_program (PYTHON3 NAMES python3)
 		if(PYTHON3)
 			message(STATUS "PYTHON plugin enabled")

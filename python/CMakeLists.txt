@@ -6,7 +6,13 @@ src/python.cpp
 _pyfar.cpp
 )
 
-find_package(PythonLibs 3.0)
+if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    set(PYTHON_LIBRARY "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib")
+    set(PYTHON_LIBRARIES "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib")
+    set(PYTHON_INCLUDE_DIRS "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include/python3.9")
+else()
+    find_package(PythonLibs 3.0)
+endif()
 
 add_library (python MODULE ${SOURCES})
 

@@ -13,13 +13,13 @@ then
 	rm -rf build
 elif [ "$1" == "debug" ]
 then
-cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DUSEWX=yes -DCMAKE_BUILD_TYPE=Debug ..
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DUSEWX=yes -DPYTHON=yes -DCMAKE_BUILD_TYPE=Debug ..
 	if [ $? -eq 0 ];
 	then
 		make -j$CONCURRENCY
 	fi
 else
-cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DUSEWX=yes -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DUSEWX=yes -DPYTHON=yes -DCMAKE_BUILD_TYPE=Release ..
 	if [ $? -eq 0 ];
 	then
 		make -j$CONCURRENCY
