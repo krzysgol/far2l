@@ -46,7 +46,7 @@ IConsoleInput *g_winport_con_in = nullptr;
 bool g_broadway = false, g_wayland = false, g_remote = false;
 
 static int g_exit_code = 0;
-static int g_maximize = 0;
+static int g_maximize = 1;
 static int g_override_width = 0;
 static int g_override_height = 0;
 static WinPortAppThread *g_winport_app_thread = NULL;
