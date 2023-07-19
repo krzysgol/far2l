@@ -4,6 +4,10 @@ set -e
 
 CONCURRENCY=$(sysctl -n hw.logicalcpu)
 
+export LDFLAGS="-L/opt/homebrew/opt/libarchive/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libarchive/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libarchive/lib/pkgconfig"
+
 mkdir -p build > /dev/null
 pushd build > /dev/null
 
