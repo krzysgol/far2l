@@ -162,7 +162,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     set(APP_DIR ${CMAKE_BINARY_DIR}/install)
     set(INSTALL_DIR ${APP_DIR}/${APP_NAME}.app/Contents/MacOS)
     set(EXECUTABLE_NAME ${APP_NAME})
-    set(LibArchive_INCLUDE_DIR "/opt/homebrew/Cellar/libarchive/3.6.2_1/include")
+    set(LibArchive_INCLUDE_DIR "/opt/homebrew/Cellar/libarchive/3.8.1/include")
 
 else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections")
