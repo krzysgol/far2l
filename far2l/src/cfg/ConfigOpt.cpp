@@ -243,7 +243,7 @@ const ConfigOpt g_cfg_opts[] {
 	{OST_COMMON, NSecInterface, "DelShowTotal", &Opt.DelOpt.DelShowTotal, 0,
 		L"InterfSettings", L"Shows total progress information during delete operations" },
 	{OST_COMMON, NSecInterface, "WindowTitle", &Opt.strWindowTitle, // %Platform
-		L"%State - FAR2L %Ver %Backend %User@%Host",
+		L"%State - FAR2L",
 		L"InterfSettings", L"The format string used for the terminal or window title; available variables see in help" },
 	{OST_COMMON, NSecInterfaceCompletion, "Exceptions", &Opt.AutoComplete.Exceptions,
 		L"git*reset*--hard;*://*:*@*;\" *\"",
